@@ -1,3 +1,5 @@
+package BusinessLayer;
+
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.TreeSet;
@@ -6,7 +8,8 @@ public class Vocabulary
 {
 	TreeSet<String> vocab; // Tree to store data
 	FileHandle file; // vocabulary files
-	// when the object will be created the files 
+	// when the object will be created the files
+
 	public Vocabulary(String fileName) throws Exception
 	{
 		super();
@@ -43,6 +46,7 @@ public class Vocabulary
 		}
 		return false;
 	}
+
 // For testing
 	public static void main(String[] args)
 	{

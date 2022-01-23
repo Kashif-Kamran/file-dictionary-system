@@ -1,3 +1,4 @@
+package BusinessLayer;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.LinkedList;
@@ -17,10 +18,7 @@ public class FileHandle extends Thread
 		wordList = new LinkedList<String>();
 		this.checkFile();
 		this.loadWordList();
-
 	}
-
-
 
 	private void checkFile() throws FileNotFoundException
 	{
