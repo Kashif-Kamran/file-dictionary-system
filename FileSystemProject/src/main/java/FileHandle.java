@@ -1,11 +1,10 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public class FileHandle
+public class FileHandle extends Thread
 {
 	String fileName; // File being read
 	List<String> wordList; // List of words in file
@@ -16,15 +15,27 @@ public class FileHandle
 		super();
 		this.fileName = fileName;
 		wordList = new LinkedList<String>();
+		this.checkFile();
 		this.loadWordList();
+
+	}
+
+
+
+	private void checkFile() throws FileNotFoundException
+	{
+		if ((new File(fileName).exists()) == false)
+		{
+			throw new FileNotFoundException(fileName + "  Not Found");
+		}
 	}
 
 	// Function to load the words of file into wordList
-	public void loadWordList() throws Exception
+	private void loadWordList()
 	{
+		File file = new File(this.fileName);
 		try
 		{
-			File file = new File(this.fileName);
 			Scanner reader = new Scanner(file);
 			String tempWord;
 			while (reader.hasNext())
@@ -37,9 +48,9 @@ public class FileHandle
 			}
 			reader.close();
 
-		} catch (FileNotFoundException exc)
+		} catch (Exception exc)
 		{
-			throw new FileNotFoundException(this.fileName + " File Not Found");
+			System.out.println(fileName + " Not found");
 		}
 	}
 
@@ -52,6 +63,7 @@ public class FileHandle
 		pollutedWord = pollutedWord.replace("(", "");
 		pollutedWord = pollutedWord.replace(":", "");
 		pollutedWord = pollutedWord.replace(".", "");
+		pollutedWord = pollutedWord.replace(";", "");
 		String pollutionFreeWord = pollutedWord;
 		return pollutionFreeWord;
 	}
@@ -64,32 +76,5 @@ public class FileHandle
 	public List<String> getWordList()
 	{
 		return wordList;
-	}
-
-	@Override
-	public String toString()
-	{
-		return "FileHandle [fileName=" + fileName + ", wordList=" + wordList + "]";
-	}
-
-	public static void main(String[] args)
-	{
-
-		try
-		{
-			FileHandle file = new FileHandle("./textFiles/test.txt");
-			LinkedList<String> list = (LinkedList<String>) file.getWordList();
-			Iterator<String>itr = list.iterator();
-			int i = 1;
-			while (itr.hasNext())
-			{
-				System.out.println(i + " : " + itr.next());
-				i++;
-			}
-
-		} catch (Exception exc)
-		{
-			System.out.println(exc.getMessage());
-		}
 	}
 }

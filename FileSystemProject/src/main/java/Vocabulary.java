@@ -4,14 +4,15 @@ import java.util.TreeSet;
 
 public class Vocabulary
 {
-	TreeSet<String> vocab;
-	FileHandle file;
-
+	TreeSet<String> vocab; // Tree to store data
+	FileHandle file; // vocabulary files
+	// when the object will be created the files 
 	public Vocabulary(String fileName) throws Exception
 	{
 		super();
 		vocab = new TreeSet<String>();
 		this.file = new FileHandle(fileName);
+		this.populateVocabulary();
 	}
 
 	public void populateVocabulary()
@@ -48,7 +49,6 @@ public class Vocabulary
 		try
 		{
 			Vocabulary vocab = new Vocabulary("./textFiles/test.txt");
-			vocab.populateVocabulary();
 			Iterator<String> itr = vocab.getVocabTree().iterator();
 
 			while (itr.hasNext())
