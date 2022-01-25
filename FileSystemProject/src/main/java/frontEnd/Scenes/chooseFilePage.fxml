@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" fx:controller="frontEnd.Controllers.ChooseFileController" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" prefHeight="70.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Initilize The System">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+         </children></HBox>
+      <HBox prefHeight="454.0" prefWidth="700.0">
+         <children>
+            <VBox prefHeight="454.0" prefWidth="100.0" />
+            <VBox prefHeight="454.0" prefWidth="600.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="600.0">
+                     <children>
+                        <VBox prefHeight="100.0" prefWidth="600.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="40.0" prefWidth="600.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vocabulary File">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="59.0" prefWidth="600.0" spacing="50.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#chooseVocabulary" text="Choose File" />
+                                    <TextField prefHeight="30.0" prefWidth="400.0" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <VBox prefHeight="356.0" prefWidth="600.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Input Files">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="316.0" prefWidth="600.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="316.0" prefWidth="164.0" spacing="100.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#chooseInputFiles" text="Choose Files" />
+                                    <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="84.0" text="Add" />
+                                 </children>
+                              </VBox>
+                              <ListView prefHeight="316.0" prefWidth="400.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children></HBox>
+      <HBox alignment="CENTER" prefHeight="77.0" prefWidth="700.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#loadFiles" prefHeight="37.0" prefWidth="319.0" text="Load Files">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+         </children></HBox>
+   </children>
+</VBox>
