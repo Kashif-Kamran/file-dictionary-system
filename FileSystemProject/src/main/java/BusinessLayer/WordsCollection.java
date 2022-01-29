@@ -1,4 +1,5 @@
 package BusinessLayer;
+import java.io.File;
 import java.util.Iterator;
 import java.util.LinkedList;
 
@@ -8,9 +9,9 @@ public class WordsCollection
 	LinkedList<Word> matchedWords;
 	FileHandle file;
 
-	public WordsCollection(String fileName, Vocabulary vocab) throws Exception
+	public WordsCollection(File passedFile, Vocabulary vocab) throws Exception
 	{
-		file = new FileHandle(fileName);
+		file = new FileHandle(passedFile);
 		matchedWords = new LinkedList<Word>();
 		this.matchVocabulary(vocab);
 	}
@@ -63,5 +64,13 @@ public class WordsCollection
 		return file;
 	}
 
+	public String getFileName()
+	{
+		return file.getFileName();
+	}
 
+	public String getFileAbsolutePath()
+	{
+		return file.getAbsolutePath();
+	}
 }

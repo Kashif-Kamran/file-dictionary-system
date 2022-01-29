@@ -1,5 +1,6 @@
 package BusinessLayer;
 
+import java.io.File;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.TreeSet;
@@ -10,11 +11,11 @@ public class Vocabulary
 	FileHandle file; // vocabulary files
 	// when the object will be created the files
 
-	public Vocabulary(String fileName) throws Exception
+	public Vocabulary(File file) throws Exception
 	{
 		super();
 		vocab = new TreeSet<String>();
-		this.file = new FileHandle(fileName);
+		this.file = new FileHandle(file);
 		this.populateVocabulary();
 	}
 
@@ -50,9 +51,11 @@ public class Vocabulary
 // For testing
 	public static void main(String[] args)
 	{
+		
 		try
 		{
-			Vocabulary vocab = new Vocabulary("./textFiles/test.txt");
+			File tempFile = new File("./textFiles/test.txt");
+			Vocabulary vocab = new Vocabulary(tempFile);
 			Iterator<String> itr = vocab.getVocabTree().iterator();
 
 			while (itr.hasNext())
@@ -64,5 +67,10 @@ public class Vocabulary
 			System.out.println(exc.getMessage());
 		}
 
+	}
+
+	public String getFileName()
+	{
+		return this.file.getFileName();
 	}
 }

@@ -9,7 +9,6 @@ public class FrontEndFactory
 	{
 		frontEnd = new FrontEnd();
 	}
-
 	public synchronized static FrontEndFactory getInstance()
 	{
 		if(instance==null)

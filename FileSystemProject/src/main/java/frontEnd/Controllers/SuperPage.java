@@ -9,6 +9,6 @@ public class SuperPage
 	{
 		// FrontEnd Singleton will be used
 		FrontEnd frontEnd = FrontEndFactory.getInstance().getFrontEnd();
-		frontEnd.changeScene(new PagesLocations().chooseFilePage);
+		frontEnd.changeScene(newPagePath);
 	}
 }

@@ -7,14 +7,14 @@ import java.util.Scanner;
 
 public class FileHandle extends Thread
 {
-	String fileName; // File being read
+	File fileToRead; // File being read
 	List<String> wordList; // List of words in file
 
 	// Constructor
-	public FileHandle(String fileName) throws Exception
+	public FileHandle(File file) throws Exception
 	{
 		super();
-		this.fileName = fileName;
+		this.fileToRead = file;
 		wordList = new LinkedList<String>();
 		this.checkFile();
 		this.loadWordList();
@@ -22,19 +22,19 @@ public class FileHandle extends Thread
 
 	private void checkFile() throws FileNotFoundException
 	{
-		if ((new File(fileName).exists()) == false)
+		if ((fileToRead.exists()) == false)
 		{
-			throw new FileNotFoundException(fileName + "  Not Found");
+			throw new FileNotFoundException(fileToRead.getName() + "  Not Found");
 		}
 	}
 
 	// Function to load the words of file into wordList
 	private void loadWordList()
 	{
-		File file = new File(this.fileName);
+
 		try
 		{
-			Scanner reader = new Scanner(file);
+			Scanner reader = new Scanner(fileToRead);
 			String tempWord;
 			while (reader.hasNext())
 			{
@@ -48,7 +48,7 @@ public class FileHandle extends Thread
 
 		} catch (Exception exc)
 		{
-			System.out.println(fileName + " Not found");
+			System.out.println(fileToRead.getName() + " Not found");
 		}
 	}
 
@@ -68,9 +68,13 @@ public class FileHandle extends Thread
 
 	public String getFileName()
 	{
-		return fileName;
+		return fileToRead.getName();
 	}
 
+	public String getAbsolutePath()
+	{
+		return fileToRead.getAbsolutePath();
+	}
 	public List<String> getWordList()
 	{
 		return wordList;

@@ -43,7 +43,6 @@ public class FrontEnd extends Application
 			System.out.println("Unable to Open File : " + exc.getStackTrace());
 		}
 	}
-
 	public static void main(String args[])
 	{
 		launch(args);

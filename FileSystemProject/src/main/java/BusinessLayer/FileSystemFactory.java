@@ -1,5 +1,6 @@
 package BusinessLayer;
 
+import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -10,17 +11,16 @@ public class FileSystemFactory
 
 	private static FileSystemFactory factory;
 
-	private FileSystemFactory(String vocabFileName, List<String> inputFilesNames) throws Exception
+	private FileSystemFactory(File vocabFile, List<File> inputFiles) throws Exception
 	{
-		fileSystem = new FileSystem(vocabFileName, inputFilesNames);
+		fileSystem = new FileSystem(vocabFile, inputFiles);
 	}
 
-	public static synchronized FileSystemFactory getInstance(String vocabFileName,
-			List<String> inputFilesNames) throws Exception
+	public static synchronized FileSystemFactory getInstance(File vocabFile, List<File> inputFiles) throws Exception
 	{
 		if (factory == null)
 		{
-			factory = new FileSystemFactory(vocabFileName, inputFilesNames);
+			factory = new FileSystemFactory(vocabFile, inputFiles);
 		}
 		return factory;
 	}
@@ -32,14 +32,14 @@ public class FileSystemFactory
 	public static void main(String[] args)
 	{
 		try {
-			String vocabFile = "./textFiles/test.txt";
-			List<String> fileNames = new LinkedList<String>();
-			fileNames.add("./textFiles/inputFile.txt");
-			fileNames.add("./textFiles/inputFile2.txt");
-			fileNames.add("./textFiles/inputFile3.txt");
+			File vocabFile = new File("./textFiles/test.txt");
+			List<File> fileNames = new LinkedList<File>();
+			fileNames.add(new File("./textFiles/inputFile.txt"));
+			fileNames.add(new File("./textFiles/inputFile2.txt"));
+			fileNames.add(new File("./textFiles/inputFile3.txt"));
 			FileSystemFactory factory = FileSystemFactory.getInstance(vocabFile, fileNames);
 			FileSystem fact2 = FileSystemFactory.getInstance(null, null).getFileSystem();
-			System.out.println(fact2.getFileMatchWords("./textFiles/inputFile.txt"));
+			System.out.println(fact2.getFileMatchWords("inputFile.txt"));
 		} catch (Exception exc)
 		{
 			System.out.println(exc.getMessage());
