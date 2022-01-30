@@ -1,0 +1,18 @@
+.my-root{
+	-fx-background-color:#ffffff;
+}
+.header{
+	-fx-background-color:#85bbb3;
+}
+.button{
+	-fx-background-color:#5cb2a6;
+}
+.button:hover{
+	-fx-background-color:#adadad;
+}
+.side-bar{
+	-fx-background-color:#bbbbbb;
+}
+.list:hover{
+	-fx-background-color:#eeeeee;
+}

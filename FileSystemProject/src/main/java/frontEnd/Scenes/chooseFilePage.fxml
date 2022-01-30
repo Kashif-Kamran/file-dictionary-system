@@ -9,19 +9,19 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontEnd.Controllers.ChooseFileController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" styleClass="my-root" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontEnd.Controllers.ChooseFileController">
    <children>
-      <HBox alignment="CENTER" prefHeight="70.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="700.0" styleClass="header">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Initilize The System">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Select Files">
                <font>
-                  <Font size="30.0" />
+                  <Font name="Consolas" size="40.0" />
                </font>
             </Text>
          </children></HBox>
-      <HBox prefHeight="454.0" prefWidth="700.0">
+      <HBox prefHeight="499.0" prefWidth="700.0" styleClass="main-body">
          <children>
-            <VBox prefHeight="454.0" prefWidth="100.0" />
+            <VBox alignment="CENTER" prefHeight="400.0" prefWidth="150.0" spacing="100.0" styleClass="side-bar" />
             <VBox prefHeight="454.0" prefWidth="600.0">
                <children>
                   <HBox prefHeight="100.0" prefWidth="600.0">
@@ -37,10 +37,13 @@
                                     </Text>
                                  </children>
                               </HBox>
-                              <HBox alignment="CENTER" prefHeight="59.0" prefWidth="600.0" spacing="50.0">
+                              <HBox alignment="CENTER" prefHeight="59.0" prefWidth="600.0" spacing="15.0">
                                  <children>
-                                    <Button mnemonicParsing="false" onAction="#chooseVocabulary" text="Choose File" />
-                                    <TextField fx:id="vocabularyTxt" prefHeight="30.0" prefWidth="400.0" />
+                                    <TextField fx:id="vocabularyTxt" prefHeight="30.0" prefWidth="400.0" styleClass="list">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font></TextField>
+                                    <Button mnemonicParsing="false" onAction="#chooseVocabulary" prefHeight="30.0" prefWidth="100.0" text="Browse" />
                                  </children>
                               </HBox>
                            </children>
@@ -51,27 +54,27 @@
                      <children>
                         <HBox alignment="CENTER" prefHeight="40.0" prefWidth="200.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Input Files">
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dictionary Files">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </Text>
                            </children>
                         </HBox>
-                        <HBox prefHeight="274.0" prefWidth="600.0">
+                        <HBox alignment="CENTER" prefHeight="274.0" prefWidth="600.0" spacing="10.0">
                            <children>
-                              <VBox alignment="CENTER" prefHeight="316.0" prefWidth="164.0" spacing="100.0">
+                              <ListView styleClass="list" fx:id="listView" prefHeight="316.0" prefWidth="400.0" />
+                              <VBox alignment="CENTER" prefHeight="264.0" prefWidth="108.0" spacing="50.0">
                                  <children>
-                                    <Button mnemonicParsing="false" onAction="#chooseInputFiles" text="Choose Files" />
-                                    <Button mnemonicParsing="false" onAction="#clearButtonPressed" prefHeight="34.0" prefWidth="84.0" text="Clear List" />
+                                    <Button mnemonicParsing="false" onAction="#chooseInputFiles" prefHeight="30.0" prefWidth="100.0" text="Browse" />
+                                    <Button mnemonicParsing="false" onAction="#clearButtonPressed" prefHeight="30.0" prefWidth="100.0" text="Clear List" />
                                  </children>
                               </VBox>
-                              <ListView fx:id="listView" prefHeight="316.0" prefWidth="400.0" />
                            </children>
                         </HBox>
                         <HBox alignment="CENTER" prefHeight="45.0" prefWidth="600.0">
                            <children>
-                              <Label prefHeight="33.0" fx:id="errorLabel" prefWidth="529.0" text="" textFill="#fc0000">
+                              <Label fx:id="errorLabel" prefHeight="33.0" prefWidth="529.0" text="" textFill="#fc0000">
                                  <font>
                                     <Font name="System Italic" size="13.0" />
                                  </font>
@@ -80,16 +83,17 @@
                         </HBox>
                      </children>
                   </VBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#loadFiles" prefHeight="37.0" prefWidth="200.0" text="Load Files">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
                </children>
             </VBox>
-         </children></HBox>
-      <HBox alignment="CENTER" prefHeight="77.0" prefWidth="700.0">
-         <children>
-            <Button mnemonicParsing="false" onAction="#loadFiles" prefHeight="37.0" prefWidth="319.0" text="Load Files">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
          </children></HBox>
    </children>
 </VBox>

@@ -14,6 +14,7 @@ public class FrontEnd extends Application
 	private int width = 700;
 	private int length = 600;
 
+
 	@Override
 	public void start(Stage primaryStage)
 	{
@@ -21,6 +22,8 @@ public class FrontEnd extends Application
 		{
 			Parent root = FXMLLoader.load(getClass().getResource(new PagesLocations().welcomePage));
 			Scene scene = new Scene(root, width, length);
+			String styling = getClass().getResource("/frontEnd/Scenes/StyleSheet.css").toExternalForm();
+			scene.getStylesheets().add(styling);
 			stage = primaryStage;
 			primaryStage.setResizable(false);
 			primaryStage.setTitle("File System");
