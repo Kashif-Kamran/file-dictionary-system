@@ -11,20 +11,20 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontEnd.Controllers.InputFileDetController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" styleClass="my-root" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontEnd.Controllers.InputFileDetController">
    <children>
-      <HBox alignment="CENTER" prefHeight="70.0">
+      <HBox alignment="CENTER" prefHeight="100.0" styleClass="header">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dictionary File">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dictionary File Data">
                <font>
-                  <Font size="30.0" />
+                  <Font name="Consolas" size="30.0" />
                </font>
             </Text>
          </children>
       </HBox>
-      <HBox prefHeight="454.0" prefWidth="700.0">
+      <HBox prefHeight="502.0" prefWidth="700.0">
          <children>
-            <VBox prefHeight="454.0" prefWidth="60.0" />
+            <VBox prefHeight="454.0" prefWidth="150.0" styleClass="side-bar" />
             <VBox prefHeight="454.0" prefWidth="600.0">
                <children>
                   <HBox prefHeight="100.0" prefWidth="600.0">
@@ -39,7 +39,10 @@
                                        </font>
                                     </Text>
                                     <ComboBox fx:id="inFilesMenu" prefWidth="150.0" promptText="Input Files" />
-                                    <Button mnemonicParsing="false" onAction="#loadButton" text="Load Files" />
+                                    <Button mnemonicParsing="false" onAction="#loadButton" prefHeight="31.0" prefWidth="115.0" text="Load File Data">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font></Button>
                                  </children>
                               </HBox>
                            </children>
@@ -48,6 +51,40 @@
                   </HBox>
                   <VBox prefHeight="356.0" prefWidth="600.0">
                      <children>
+                        <HBox alignment="CENTER" prefHeight="45.0" prefWidth="600.0" spacing="50.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="45.0" prefWidth="200.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="File Data List">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="280.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Matched Words List">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="245.0" prefWidth="575.0" spacing="30.0">
+                           <children>
+                              <ListView fx:id="wordsList" prefHeight="274.0" prefWidth="200.0" styleClass="list" />
+                              <TableView fx:id="table" prefHeight="274.0" prefWidth="280.0" styleClass="list">
+                                <columns>
+                                  <TableColumn fx:id="srNoCol" prefWidth="66.0" text="Sr No" />
+                                  <TableColumn fx:id="wordCol" prefWidth="110.0" text="Word" />
+                                    <TableColumn fx:id="frequencyCol" prefWidth="106.0" text="Frequency" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
                         <HBox alignment="CENTER" prefHeight="45.0" prefWidth="600.0">
                            <children>
                               <Label fx:id="error" prefHeight="33.0" prefWidth="529.0" text="" textFill="#fc0000">
@@ -57,31 +94,19 @@
                               </Label>
                            </children>
                         </HBox>
-                        <HBox alignment="CENTER" prefHeight="274.0" prefWidth="600.0" spacing="70.0">
-                           <children>
-                              <ListView fx:id="wordsList" prefHeight="274.0" prefWidth="208.0" />
-                              <TableView fx:id="table" prefHeight="274.0" prefWidth="290.0">
-                                <columns>
-                                  <TableColumn fx:id="srNoCol" prefWidth="66.0" text="Sr No" />
-                                  <TableColumn fx:id="wordCol" prefWidth="110.0" text="Word" />
-                                    <TableColumn fx:id="frequencyCol" prefWidth="106.0" text="Frequency" />
-                                </columns>
-                              </TableView>
-                           </children>
-                        </HBox>
                      </children>
                   </VBox>
+                  <HBox alignment="CENTER" prefHeight="65.0" prefWidth="575.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#backButton" prefHeight="39.0" prefWidth="250.0" text="Back">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
                </children>
             </VBox>
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="77.0" prefWidth="700.0">
-         <children>
-            <Button mnemonicParsing="false" onAction="#backButton" prefHeight="37.0" prefWidth="319.0" text="Back">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
          </children>
       </HBox>
    </children>
