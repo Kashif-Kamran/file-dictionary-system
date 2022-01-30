@@ -1,72 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontEnd.Controllers.welcomePageController">
    <children>
-      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="700.0">
-         <VBox.margin>
-            <Insets />
-         </VBox.margin>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="80.0" prefWidth="700.0">
-         <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome To">
-               <font>
-                  <Font name="Consolas" size="30.0" />
-               </font>
-            </Text>
-         </children>
-      </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="700.0">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="File System">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="File Dictionary System">
                <font>
                   <Font name="Consolas" size="40.0" />
                </font>
             </Text>
          </children>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <HBox alignment="CENTER" prefHeight="294.0" prefWidth="700.0" spacing="50.0">
          <children>
-            <VBox prefHeight="100.0" prefWidth="700.0">
+            <VBox alignment="CENTER" prefHeight="181.0" prefWidth="300.0" spacing="5.0">
                <children>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="700.0">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="By : Kashif Kamran">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Batch: 19">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="181.0" prefWidth="300.0" spacing="10.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="103.0" prefWidth="508.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="By: Kashif Kamran">
+                        <HBox alignment="CENTER" prefHeight="30.0" prefWidth="508.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="What it does?">
+                                 <font>
+                                    <Font name="System Bold Italic" size="16.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1. Takes one vocabulary and multiple input Files (.txt)">
                            <font>
-                              <Font name="Consolas" size="20.0" />
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2. Checks occurrence of input files wors in vocablary">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3. If word exsists then it counts its frequency in local input file">
+                           <font>
+                              <Font size="15.0" />
                            </font>
                         </Text>
                      </children>
-                  </HBox>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="700.0">
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="103.0" prefWidth="508.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="National University Of Computer And Emerging Scienes">
+                        <HBox alignment="CENTER" prefHeight="30.0" prefWidth="508.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="How It works?">
+                                 <font>
+                                    <Font name="System Bold Italic" size="16.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="1. Words Present In vocabulary file">
                            <font>
-                              <Font name="Consolas" size="20.0" />
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="2. Words present in inputFiles">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="3. Frequency of inputFiles Words">
+                           <font>
+                              <Font size="15.0" />
                            </font>
                         </Text>
                      </children>
-                  </HBox>
+                  </VBox>
                </children>
             </VBox>
          </children>
       </HBox>
-      <HBox alignment="CENTER" prefHeight="193.0" prefWidth="700.0" spacing="100.0">
+      <HBox alignment="CENTER" prefHeight="168.0" prefWidth="700.0" spacing="100.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Press Button To Continue : ">
                <font>
                   <Font size="20.0" />
                </font>
             </Text>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="124.0" onAction="#continueButtonPressed" text="Continue">
+            <Button mnemonicParsing="false" onAction="#continueButtonPressed" prefHeight="40.0" prefWidth="124.0" text="Continue">
                <font>
                   <Font size="15.0" />
                </font>
