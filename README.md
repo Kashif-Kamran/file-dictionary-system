@@ -1,6 +1,6 @@
 # File Dictionary System
 
-The File Dictionary System is a Java-based application that allows for fast analysis of words in text files. It provides an intuitive user interface using Java FX and loads data into a tree data structure for efficient searching.
+The File Dictionary System is a desktop application developed with Java (backend) and JavaFX (frontend), designed to process and analyze similarities between multiple documents. By loading text into advanced data structures, it efficiently identifies connections and similarities across files. This tool is invaluable for those needing to compare document content quickly, offering insights with its sophisticated algorithm. It highlights my expertise in creating solutions that combine robust backend logic with intuitive front-end design.
 
 ## Features
 
