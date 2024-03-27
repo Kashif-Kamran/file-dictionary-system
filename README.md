@@ -10,6 +10,20 @@ The File Dictionary System is a desktop application developed with Java (backend
 - Filter search results by file and word
 - Export search results to a CSV file
 
+## Front-end 
+
+![1](https://github.com/Kashif-Kamran/file-dictionary-system/assets/80104444/016b6ebc-fa4b-4952-9996-02c29a61daaa)x
+
+![2](https://github.com/Kashif-Kamran/file-dictionary-system/assets/80104444/cdf5155c-130f-441c-a41f-43b4d499f94b) 
+
+![3](https://github.com/Kashif-Kamran/file-dictionary-system/assets/80104444/3676d964-63a1-4e9e-b823-cdd3df16ab25)
+
+![4](https://github.com/Kashif-Kamran/file-dictionary-system/assets/80104444/81dad029-f6a1-42e6-b9b4-36d8fa117575)
+
+![5](https://github.com/Kashif-Kamran/file-dictionary-system/assets/80104444/b86f98b2-8bbb-470d-b9dd-b4e31d239038)
+
+![6](https://github.com/Kashif-Kamran/file-dictionary-system/assets/80104444/5845b324-82fb-40a6-9d6a-309ab760c746)
+
 ## Installation
 
 For now, this is not in installable form but in simple form. You can clone this application from given link.
